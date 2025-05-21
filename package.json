@@ -13,7 +13,7 @@
   "main": "index.js",
   "scripts": {
     "test": "test",
-    "run": "npx ts-node --loader ts-node/esm index.ts"
+    "exec": "node --loader ts-node/esm index.ts"
   },
   "devDependencies": {
     "@types/node": "^22.15.21",
