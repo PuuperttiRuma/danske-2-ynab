@@ -17,7 +17,6 @@ async function getBudgets(): Promise<Budget[] | undefined> {
 }
 
 async function getTransactions(id: string, sinceDate: string) {
-  //const dateString = sinceDate.toISOString().split("T")[0];
   try {
     const response = await axios.get(
       `${baseURL}/budgets/${id}/transactions?since_date=${sinceDate}`,
@@ -31,12 +30,17 @@ async function getTransactions(id: string, sinceDate: string) {
   }
 }
 
-const budgets: Budget[] | undefined = await getBudgets();
-if (budgets) {
+async function main() {
+  const budgets: Budget[] | undefined = await getBudgets();
+  if (!budgets) return;
+
   const omaBudget = budgets.find((budget) => budget.name === "Tommin Oma");
+  if (!omaBudget) return;
+
   console.log(omaBudget);
-  if (omaBudget) {
-    const transactions = await getTransactions(omaBudget?.id, "2025-05-15");
-    console.log(transactions);
-  }
+
+  const transactions = await getTransactions(omaBudget.id, "2025-05-15");
+  console.log(transactions);
 }
+
+main();
