@@ -1,0 +1,26 @@
+{
+  "name": "db-csv-2-ynab",
+  "version": "1.0.0",
+  "description": "Convert and upload Finnish Danske Bank CSV-file transactions to YNAB budget",
+  "keywords": [
+    "integration",
+    "banking",
+    "ynab"
+  ],
+  "license": "ISC",
+  "author": "Tommi Haapanen",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.21",
+    "axios": "^1.9.0",
+    "dotenv": "^16.5.0",
+    "eslint": "^9.27.0",
+    "prettier": "^3.5.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}
